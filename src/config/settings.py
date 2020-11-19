@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # database app
     'django.contrib.postgres',
+    # email newsletter app
+    'mailchimp3',
     # my apps
     'cases',      # Cases applications
     'mailings',   # Mail sending application
@@ -98,16 +100,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+                        UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+                        MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+                        CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+                        NumericPasswordValidator',
     },
 ]
 
@@ -131,7 +137,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Setting up mailing lists, storing login and password in environment variables
-# Настройка мейл рассылки, хранение логина и пароля в переменных окружения.
+# Setting up mailing lists, storing login, password,
+# ID list and ID case in environment variables
+# Настройка мейл рассылки, хранение логина, пароля,
+# ID аудитории и ID материала в переменных окружения.
 MAILCHIMP_USERNAME = os.getenv('MAILCHIMP_USERNAME')
 MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
+MAILCHIMP_COMMON_LIST_ID = '123456'
+MAILCHIMP_CASE_LIST_ID = '111222'
