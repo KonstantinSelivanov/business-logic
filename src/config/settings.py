@@ -139,9 +139,11 @@ STATIC_URL = '/static/'
 
 # Setting up mailing lists, storing login, password,
 # ID list and ID case in environment variables
-# Настройка мейл рассылки, хранение логина, пароля,
-# ID аудитории и ID материала в переменных окружения.
+# Настройка мейл рассылки, хранение логина, пароля
+# ID аудитории, ID материала в переменных окружения.
 MAILCHIMP_USERNAME = os.getenv('MAILCHIMP_USERNAME')
 MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
-MAILCHIMP_COMMON_LIST_ID = '123456'
-MAILCHIMP_CASE_LIST_ID = '111222'
+MAILCHIMP_AUDIENCE = {
+    'COMMON': '123456',
+    'CASES': '111222'
+}
