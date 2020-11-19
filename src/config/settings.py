@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # database app
     'django.contrib.postgres',
+    # my apps
+    'cases',      # Cases applications
+    'mailings',   # Mail sending application
+    'donations',  # Donation sending application
+
 ]
 
 MIDDLEWARE = [
@@ -124,3 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Setting up mailing lists, storing login and password in environment variables
+# Настройка мейл рассылки, хранение логина и пароля в переменных окружения.
+MAILCHIMP_USERNAME = os.getenv('MAILCHIMP_USERNAME')
+MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
