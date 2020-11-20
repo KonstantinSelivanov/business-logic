@@ -43,9 +43,7 @@ INSTALLED_APPS = [
     # email newsletter app
     'mailchimp3',
     # my apps
-    'cases',      # Cases applications
     'mailings',   # Mail sending application
-    'donations',  # Donation sending application
 
 ]
 
