@@ -1,11 +1,8 @@
 
 
 # Applied technology stack:
-`Django==3.1.3`
-`psycopg2==2.8.6  # adapter PostgreSQL`
-`mailchimp3==3.0.14  # email newsletter`
-
 ```bash
-sudo systemctl daemon-reload
-sudo systemctl restart gunicorn
+Django==3.1.3
+psycopg2==2.8.6  # adapter PostgreSQL
+mailchimp3==3.0.14  # email newsletter
 ```
